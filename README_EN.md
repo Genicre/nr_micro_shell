@@ -2,7 +2,7 @@
 
 [中文版](./readme.md)
 
-> v2.0
+> v2.0: Compared to version 1.0, this version fixes several bugs, adds command-line TAB completion functionality, and is more stable and concise. 
 
 ## 1. Introduction
 MCU debugging often requires interactive operations such as retrieving/configuring parameters and executing specific functions. **nr_micro_shell** is a low-overhead, bare-metal compatible command-line interaction tool designed to meet these needs.
@@ -33,8 +33,8 @@ Configuration for both tools:
 - Command line thread stack: 512 bytes
 
 ### 1.3 Reliability
-- TODO: 100% code coverage via gcov
-- TODO: Memory safety verification via AddressSanitizer (asan)
+- Gcov code coverage 90+% (after running test commands, view results in test/out/coverage/html)
+- Memory safety verification via AddressSanitizer (asan)
 
 ### 1.4 Extensibility
 Supports user-defined commands.
@@ -131,7 +131,20 @@ tail -f ./debug.log
 tail -f ./key_rec.log
 # Clean compiled files
 make clean
+# test
+cd test
+./test.sh
+# Test results are located in the test/out/ directory (such as code coverage, etc.) 
 ```
+
+TODO (Contributions and PRs are welcome)
+
+| TASK                    | STATUS |
+| ----------------------- | ------ |
+| RT-Thread adaptation example |      |
+| FreeRTOS adaptation example  |      |
+| STM32 adaptation example     |      |
+| More general commands        |      |
 
 If you wish to contribute code, please submit a Pull Request (PR) to the GitHub repository.  
 For feedback or suggestions, please submit an Issue on GitHub or Gitee.
