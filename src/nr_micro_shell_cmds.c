@@ -35,6 +35,13 @@ int cmd_help(uint8_t argc, char **argv)
 	return 0;
 }
 
+int cmd_clear(uint8_t argc, char **argv)
+{
+	printf("\033[2J");
+	printf("\033[0;0H");
+	return 0;
+}
+
 #ifdef NR_SHELL_CMD_RD
 int cmd_rd(uint8_t argc, char **argv)
 {
@@ -218,6 +225,7 @@ int cmd_time(uint8_t argc, char **argv)
 
 struct cmd cmd_table[] = {
 	{ .name = "help", .func = cmd_help, .desc = "show this help" },
+	{ .name = "clear", .func = cmd_clear, .desc = "clear screen" },
 
 #ifdef NR_SHELL_CMD_RD
 	{ .name = "rd", .func = cmd_rd, .desc = "read memory" },
